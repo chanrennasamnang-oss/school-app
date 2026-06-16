@@ -1,96 +1,1331 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="/_vercel/insights/script.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
-    />
-    <title>Vercel HTML Starter</title>
-    <meta
-      name="description"
-      content="High-performance HTML based website template."
-    />
-  </head>
-  <body>
-    <h1>Vercel HTML Starter</h1>
-    <p>
-      This template is a simple, but powerful single
-      <code>index.html</code> file deployed to
-      <a href="https://vercel.com">Vercel</a>. When your site is deployed, all
-      static assets (like HTML, JavaScript, CSS, images, and more) are deployed
-      globally to every
-      <a href="https://vercel.com/docs/concepts/edge-network/overview"
-        >Vercel Edge Network</a
-      >
-      region.
-    </p>
-    <h2>Simple, privacy-friendly analytics</h2>
-    <p>
-      Want to understand your visitor traffic? Vercel Analytics gives you
-      first-party, privacy-friendly traffic analytics for your HTML site. This
-      template is already configured using the following script:
-    </p>
-    <pre><code>&lt;script defer src="/_vercel/insights/script.js"&gt;&lt;/script&gt;</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/analytics">Vercel Analytics</a>.
-    </p>
-    <h2>Integrated with git</h2>
-    <p>
-      Deploying updates to your site is as simple as
-      <code>git push</code> thanks to Vercel's advanced
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-      Support for GitHub, GitLab, Bitbucket is zero-configuration, and with the
-      flexible Vercel CLI and API, you can integrate with any tool possible.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-    </p>
-    <h2>Fast <code>gzip</code> compression</h2>
-    <p>
-      To help ensure the smallest possible file sizes for your static assets,
-      the Vercel Edge Network compresses files by default using
-      <code>gzip</code>. You can also optionally use
-      <code>brotli</code> compressesion if you prefer.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/edge-network/compression"
-        >compression</a
-      >.
-    </p>
-    <h2>Advanced routing configuration</h2>
-    <p>
-      Vercel gives you a variety of ways to configure the routing of your
-      website. For example, adding redirects, rewrites, or headers to your page.
-      While you can use <code>vercel.json</code> to define these through JSON,
-      you can also express your routing configuration as code using
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
-    <p>
-      Middleware runs before the
-      <a href="https://vercel.com/docs/concepts/edge-network/caching"
-        >Vercel Edge Network Cache</a
-      >, so you can configure routing exactly as your application needs. For
-      example, this template uses <code>middleware.js</code> defined in the root
-      of the repository to add additional security headers to the site:
-    </p>
-    <pre><code>referrer-policy: origin-when-cross-origin
-strict-transport-security: max-age=31536000; includeSubDomains; preload
-x-content-type-options: nosniff
-x-dns-prefetch-control: on
-x-frame-options: DENY</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
-  </body>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>វិទ្យាល័យស្ដៅសន្តិភាព - ទំព័រដើម</title>
+    
+    <!-- Google Fonts for Khmer Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanuman:wght@400;700&family=Moul&family=Siemreap&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind Navigation CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'siemreap': ['Siemreap', 'sans-serif'],
+                        'moul': ['Moul', 'cursive'],
+                        'hanuman': ['Hanuman', 'serif'],
+                    },
+                    colors: {
+                        primary: '#1e3a8a', // Dark blue (MoEYS style)
+                        secondary: '#facc15', // Yellow 
+                        accent: '#2563eb',
+                        baciiBlue: '#1e3a8a',
+                        baciiOrange: '#c2410c'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Siemreap', sans-serif; background-color: #f3f4f6; }
+        .font-moul { font-family: 'Moul', cursive; }
+        .font-hanuman { font-family: 'Hanuman', serif; }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #1e3a8a; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #1e40af; }
+
+        /* Banner overlay */
+        .banner-overlay {
+            background: linear-gradient(rgba(30, 58, 138, 0.7), rgba(0, 0, 0, 0.5));
+        }
+    </style>
+</head>
+<body class="text-gray-800 antialiased flex flex-col min-h-screen">
+
+    <!-- Top Bar -->
+    <div class="bg-primary text-white py-2 text-sm hidden md:block">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fa-solid fa-building-columns"></i>
+                <span>ក្រសួងអប់រំ យុវជន និងកីឡា</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <span><i class="fa-solid fa-envelope mr-1"></i> info@sdp-highschool.org</span>
+                <span><i class="fa-solid fa-phone mr-1"></i> +855 76 647 8888</span>
+                <span>សូមស្វាគមន៍!</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo & School Name -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center border-2 border-secondary shadow-lg group-hover:scale-105 transition-transform overflow-hidden">
+                    <img src="https://lh3.googleusercontent.com/d/1erhKZaSlGMXWNHJIdRzthcv81ePt2uyj" alt="វិទ្យាល័យស្ដៅសន្តិភាព Logo" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/100x100?text=Logo'">
+                </div>
+                <div>
+                    <h1 class="font-moul text-primary text-lg md:text-2xl tracking-wide">វិទ្យាល័យស្ដៅសន្តិភាព</h1>
+                    <p class="text-xs md:text-sm text-gray-500 font-hanuman">Sdao Santepheap High School</p>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex space-x-6 text-sm md:text-base font-bold text-gray-700">
+                <a href="#" class="hover:text-primary transition-colors py-2 border-b-2 border-transparent hover:border-primary text-primary border-primary">ទំព័រដើម</a>
+                <a href="#services" class="hover:text-primary transition-colors py-2 border-b-2 border-transparent hover:border-primary">សេវាសាលារៀន</a>
+                <a href="#" class="hover:text-primary transition-colors py-2 border-b-2 border-transparent hover:border-primary">ព័ត៌មាន</a>
+                <a href="#contact-section" class="hover:text-primary transition-colors py-2 border-b-2 border-transparent hover:border-primary">ទំនាក់ទំនង</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="lg:hidden text-primary focus:outline-none text-2xl p-2">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation (Hidden by default) -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
+            <div class="flex flex-col px-4 py-2 space-y-2 font-bold text-gray-700">
+                <a href="#" class="block py-2 text-primary">ទំព័រដើម</a>
+                <a href="#services" class="block py-2 hover:text-primary">សេវាសាលារៀន</a>
+                <a href="#" class="block py-2 hover:text-primary">ព័ត៌មាន</a>
+                <a href="#contact-section" class="block py-2 hover:text-primary">ទំនាក់ទំនង</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero / Cover Section -->
+    <section class="relative h-[60vh] min-h-[400px] flex items-center justify-center bg-gray-900 bg-[url('https://lh3.googleusercontent.com/d/1lv0OphsQIXvOzcJ0sRAASAuccCTkdM_2')] bg-cover bg-center bg-no-repeat">
+        <div class="absolute inset-0 banner-overlay"></div>
+        <div class="relative z-10 text-center text-white px-4 max-w-4xl">
+            <h2 class="font-moul text-2xl md:text-4xl mb-6 leading-relaxed text-white drop-shadow-lg">
+                សូមស្វាគមន៍មកកាន់<br>
+                <span class="inline-block mt-3 text-secondary">វិទ្យាល័យស្ដៅសន្តិភាព</span>
+            </h2>
+            <p class="text-lg md:text-xl mb-8 font-hanuman">បណ្តុះបណ្តាលចំណេះដឹង វិន័យ សីលធម៌ ដើម្បីអនាគតយុវជនកម្ពុជាដ៏ភ្លឺស្វាង។</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button onclick="scrollToServices()" class="bg-primary hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all transform hover:-translate-y-1 border-2 border-primary hover:border-white">
+                    <i class="fa-solid fa-search mr-2"></i> ស្វែងរកលទ្ធផល
+                </button>
+                <button onclick="document.getElementById('contact-section').scrollIntoView({ behavior: 'smooth' });" class="bg-transparent border-2 border-white hover:bg-white hover:text-primary text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all transform hover:-translate-y-1">
+                    <i class="fa-solid fa-address-card mr-2"></i> ទំនាក់ទំនងសាលា
+                </button>
+            </div>
+            
+            <!-- Connection Status Mock -->
+            <div class="mt-8 inline-block bg-green-500/20 border border-green-400 backdrop-blur-sm rounded-lg px-4 py-2 text-sm text-green-100">
+                <i class="fa-solid fa-circle-check text-green-400 mr-2"></i> ប្រព័ន្ធទិន្នន័យកំពុងដំណើរការយ៉ាងរលូន
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Links / Buttons Section -->
+    <section class="py-8 bg-gray-100 border-b border-gray-200">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-4 md:gap-6">
+                <!-- Button 1: ទំព័រដើម -->
+                <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="bg-white hover:bg-primary hover:text-white text-primary font-bold py-3 px-6 rounded-lg shadow transition-all flex items-center border border-primary/20 group">
+                    <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3 group-hover:bg-white/20">
+                        <i class="fa-solid fa-house-chimney text-lg"></i>
+                    </div>
+                    ទំព័រដើម
+                </button>
+                <!-- Button 2: លទ្ធផលសិក្សាទូទៅ -->
+                <button onclick="openResultModal()" class="bg-white hover:bg-green-600 hover:text-white text-green-600 font-bold py-3 px-6 rounded-lg shadow transition-all flex items-center border border-green-600/20 group">
+                    <div class="w-10 h-10 bg-green-600/10 rounded-full flex items-center justify-center mr-3 group-hover:bg-white/20">
+                        <i class="fa-solid fa-graduation-cap text-lg"></i>
+                    </div>
+                    លទ្ធផលសិក្សាទូទៅ
+                </button>
+                <!-- Button 3: ស្តង់ដាបាក់ឌុប -->
+                <button onclick="openBacIIModal()" class="bg-white hover:bg-yellow-600 hover:text-white text-yellow-600 font-bold py-3 px-6 rounded-lg shadow transition-all flex items-center border border-yellow-600/20 group">
+                    <div class="w-10 h-10 bg-yellow-600/10 rounded-full flex items-center justify-center mr-3 group-hover:bg-white/20">
+                        <i class="fa-solid fa-award text-lg"></i>
+                    </div>
+                    ស្តង់ដាបាក់ឌុប
+                </button>
+                <!-- Button 4: កិច្ចការរដ្ឋបាល -->
+                <button onclick="openAdminModal()" class="bg-white hover:bg-orange-600 hover:text-white text-orange-600 font-bold py-3 px-6 rounded-lg shadow transition-all flex items-center border border-orange-600/20 group">
+                    <div class="w-10 h-10 bg-orange-600/10 rounded-full flex items-center justify-center mr-3 group-hover:bg-white/20">
+                        <i class="fa-solid fa-paste text-lg"></i>
+                    </div>
+                    កិច្ចការរដ្ឋបាល
+                </button>
+                <!-- Button 5: របាយការណ៍សាលា -->
+                <button onclick="openAdminModal()" class="bg-white hover:bg-blue-600 hover:text-white text-blue-600 font-bold py-3 px-6 rounded-lg shadow transition-all flex items-center border border-blue-600/20 group">
+                    <div class="w-10 h-10 bg-blue-600/10 rounded-full flex items-center justify-center mr-3 group-hover:bg-white/20">
+                        <i class="fa-solid fa-chart-line text-lg"></i>
+                    </div>
+                    របាយការណ៍សាលា
+                </button>
+                <!-- Button 6: ចុះឈ្មោះចូលរៀន -->
+                <button onclick="openEnrollmentModal()" class="bg-white hover:bg-indigo-600 hover:text-white text-indigo-600 font-bold py-3 px-6 rounded-lg shadow transition-all flex items-center border border-indigo-600/20 group">
+                    <div class="w-10 h-10 bg-indigo-600/10 rounded-full flex items-center justify-center mr-3 group-hover:bg-white/20">
+                        <i class="fa-solid fa-user-plus text-lg"></i>
+                    </div>
+                    ចុះឈ្មោះចូលរៀន
+                </button>
+                <!-- Button 7: បទបញ្ជាផ្ទៃក្នុង -->
+                <button onclick="openRulesModal()" class="bg-white hover:bg-rose-600 hover:text-white text-rose-600 font-bold py-3 px-6 rounded-lg shadow transition-all flex items-center border border-rose-600/20 group">
+                    <div class="w-10 h-10 bg-rose-600/10 rounded-full flex items-center justify-center mr-3 group-hover:bg-white/20">
+                        <i class="fa-solid fa-book-open-reader text-lg"></i>
+                    </div>
+                    បទបញ្ជាផ្ទៃក្នុង
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- School Services Section -->
+    <section id="services" class="py-16 bg-white flex-grow">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="font-moul text-2xl md:text-3xl text-primary mb-2">សេវាសាលារៀន</h3>
+                <div class="w-24 h-1 bg-secondary mx-auto rounded-full"></div>
+                <p class="mt-4 text-gray-600">សេវាកម្មរហ័ស និងងាយស្រួលសម្រាប់សិស្សានុសិស្ស អាណាព្យាបាល និងបុគ្គលិក</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                <!-- Service 1: Check Results -->
+                <div class="bg-gray-50 rounded-2xl p-8 text-center border border-gray-100 shadow-md hover:shadow-xl transition-all group cursor-pointer" onclick="openResultModal()">
+                    <div class="w-20 h-20 bg-blue-100 text-primary rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary group-hover:text-white transition-colors text-3xl">
+                        <i class="fa-solid fa-square-poll-vertical"></i>
+                    </div>
+                    <h4 class="font-bold text-xl mb-3 text-gray-800 group-hover:text-primary transition-colors">ពិនិត្យលទ្ធផល</h4>
+                    <p class="text-gray-500 text-sm mb-6">ស្វែងរកពិន្ទុ លទ្ធផលប្រឡងប្រចាំខែ និងប្រចាំឆមាស តាមរយៈអត្តលេខសិស្ស。</p>
+                    <span class="text-primary font-bold text-sm flex items-center justify-center group-hover:underline">
+                        ចូលមើល <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </span>
+                </div>
+
+                <!-- Service 2: Download Docs -->
+                <div class="bg-gray-50 rounded-2xl p-8 text-center border border-gray-100 shadow-md hover:shadow-xl transition-all group cursor-pointer" onclick="showCustomToast('ទំព័រទាញយកឯកសារមេរៀន និងកម្រងលំហាត់កំពុងត្រូវបានរៀបចំ...');">
+                    <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-green-600 group-hover:text-white transition-colors text-3xl">
+                        <i class="fa-solid fa-file-arrow-down"></i>
+                    </div>
+                    <h4 class="font-bold text-xl mb-3 text-gray-800 group-hover:text-green-600 transition-colors">ទាញឯកសារ</h4>
+                    <p class="text-gray-500 text-sm mb-6">ទាញយកឯកសារមេរៀន កម្រងលំហាត់ វិញ្ញាសា និងពាក្យសុំផ្សេងៗរបស់សាលា。</p>
+                    <span class="text-green-600 font-bold text-sm flex items-center justify-center group-hover:underline">
+                        ចូលមើល <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </span>
+                </div>
+
+                <!-- Service 3: Reports -->
+                <div class="bg-gray-50 rounded-2xl p-8 text-center border border-gray-100 shadow-md hover:shadow-xl transition-all group cursor-pointer" onclick="openAdminModal()">
+                    <div class="w-20 h-20 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-orange-600 group-hover:text-white transition-colors text-3xl">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+                    <h4 class="font-bold text-xl mb-3 text-gray-800 group-hover:text-orange-600 transition-colors">របាយការណ៍</h4>
+                    <p class="text-gray-500 text-sm mb-6">របាយការណ៍អវត្តមាន ស្នាដៃសិស្ស និងស្ថិតិផ្សេងៗពាក់ព័ន្ធនឹងរដ្ឋបាលសាលា。</p>
+                    <span class="text-orange-600 font-bold text-sm flex items-center justify-center group-hover:underline">
+                        ចូលមើល <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </span>
+                </div>
+
+                <!-- Service 4: Contact -->
+                <div class="bg-gray-50 rounded-2xl p-8 text-center border border-gray-100 shadow-md hover:shadow-xl transition-all group cursor-pointer" onclick="document.getElementById('contact-section').scrollIntoView({ behavior: 'smooth' });">
+                    <div class="w-20 h-20 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-purple-600 group-hover:text-white transition-colors text-3xl">
+                        <i class="fa-solid fa-phone-volume"></i>
+                    </div>
+                    <h4 class="font-bold text-xl mb-3 text-gray-800 group-hover:text-purple-600 transition-colors">ទំនាក់ទំនង</h4>
+                    <p class="text-gray-500 text-sm mb-6">ទាក់ទងមកកាន់លេខទូរស័ព្ទ អ៊ីមែល ឬបណ្តាញសង្គមផ្លូវការរបស់វិទ្យាល័យ។</p>
+                    <span class="text-purple-600 font-bold text-sm flex items-center justify-center group-hover:underline">
+                        ចូលមើល <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News and Events Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-end mb-10 border-b border-gray-200 pb-4">
+                <div>
+                    <h3 class="font-moul text-2xl md:text-3xl text-primary mb-2">ព័ត៌មាន និងព្រឹត្តិការណ៍សំខាន់ៗ</h3>
+                    <div class="w-16 h-1 bg-secondary rounded-full"></div>
+                </div>
+                <a href="#" class="hidden md:inline-block text-primary font-bold hover:underline">មើលទាំងអស់ <i class="fa-solid fa-angle-right"></i></a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- News Item 1 -->
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow border border-gray-100 flex flex-col">
+                    <img src="https://lh3.googleusercontent.com/d/1k57hAjm_X9ENMR5U_q8yxEjQO5bVQkB1" alt="ពិធីចែកវិញ្ញាបនបត្រ" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/eeeeee/aaaaaa?text=News+Image+1'">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <div class="flex items-center text-xs text-gray-500 mb-3 space-x-4">
+                            <span><i class="fa-regular fa-calendar mr-1"></i> ១៤ មិថុនា ២០២៦</span>
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-[10px] font-bold">ព្រឹត្តិការណ៍</span>
+                        </div>
+                        <h4 class="font-bold text-lg text-gray-800 mb-3 line-clamp-2 hover:text-primary cursor-pointer transition-colors">ពិធីចែកវិញ្ញាបនបត្រជូនសិស្សានុសិស្សដែលបានបញ្ចប់ការសិក្សាឆ្នាំ២០២៥-២០២៦</h4>
+                        <p class="text-gray-600 text-sm line-clamp-3 mb-4 flex-grow">សាលាបានរៀបចំពិធីចែកវិញ្ញាបនបត្រជូនសិស្សថ្នាក់ទី១២ ដែលបានប្រឡងជាប់សញ្ញាបត្រមធ្យមសិក្សាទុតិយភូមិក្នុងឆ្នាំសិក្សាកន្លងទៅប្រកបដោយបរិយាកាសរីករាយ...</p>
+                        <div class="hidden full-text">
+                            <p class="mb-4">សាលាបានរៀបចំពិធីចែកវិញ្ញាបនបត្រជូនសិស្សថ្នាក់ទី១២ ដែលបានប្រឡងជាប់សញ្ញាបត្រមធ្យមសិក្សាទុតិយភូមិក្នុងឆ្នាំសិក្សាកន្លងទៅប្រកបដោយបរិយាកាសរីករាយ និងមោទកភាពយ៉ាងក្រៃលែង។ នេះគឺជាជោគជ័យដ៏ធំធេងសម្រាប់សិស្សានុសិស្ស អាណាព្យាបាល និងលោកគ្រូអ្នកគ្រូ។</p>
+                            <p>យើងសូមជូនពរដល់ក្មួយៗទាំងអស់បន្តការសិក្សានៅកម្រិតឧត្តមសិក្សាដោយជោគជ័យបន្តទៀត。</p>
+                        </div>
+                        <button onclick="openNewsModal(this)" class="text-primary font-bold text-sm inline-flex items-center hover:underline mt-auto cursor-pointer">អានបន្ត <i class="fa-solid fa-arrow-right-long ml-2"></i></button>
+                    </div>
+                </div>
+
+                <!-- News Item 2 -->
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow border border-gray-100 flex flex-col">
+                    <iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/1305418050785000/&show_text=0" width="100%" height="300" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <div class="flex items-center text-xs text-gray-500 mb-3 space-x-4">
+                            <span><i class="fa-regular fa-calendar mr-1"></i> ១០ មិថុនា ២០២៦</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-[10px] font-bold">វីដេអូ</span>
+                        </div>
+                        <h4 class="font-bold text-lg text-gray-800 mb-3 line-clamp-2 hover:text-primary cursor-pointer transition-colors">ទិដ្ឋភាពទូទៅរបស់វិទ្យាល័យ</h4>
+                        <p class="text-gray-600 text-sm line-clamp-3 mb-4 flex-grow">ទស្សនាទិដ្ឋភាពទូទៅដ៏ស្រស់ស្អាត បរិស្ថានបៃតង និងអគារសិក្សាផ្សេងៗនៅក្នុងបរិវេណវិទ្យាល័យស្ដៅសន្តិភាពរបស់យើង...</p>
+                        <div class="hidden full-text">
+                            <p class="mb-4">ទស្សនាទិដ្ឋភាពទូទៅដ៏ស្រស់ស្អាត បរិស្ថានបៃតង និងអគារសិក្សាផ្សេងៗនៅក្នុងបរិវេណវិទ្យាល័យស្ដៅសន្តិភាពរបស់យើង។ បរិស្ថានសិក្សាដែលមានសុវត្ថិភាព និងភាពសប្បាយរីករាយ។</p>
+                            <p>សាលាយើងខ្ញុំតែងតែខិតខំកែលម្អសោភ័ណភាពដើម្បីផ្ដល់បរិយាកាសល្អបំផុតសម្រាប់សិស្សានុសិស្ស។</p>
+                        </div>
+                        <button onclick="openNewsModal(this)" class="text-primary font-bold text-sm inline-flex items-center hover:underline mt-auto cursor-pointer">អានបន្ត <i class="fa-solid fa-arrow-right-long ml-2"></i></button>
+                    </div>
+                </div>
+
+                <!-- News Item 3 -->
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow border border-gray-100 flex flex-col">
+                    <img src="https://lh3.googleusercontent.com/d/1s1-1N9ujTIMVpaIO11xawb1ZB6wLCYze" alt="News 3" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/eeeeee/aaaaaa?text=News+Image+3'">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <div class="flex items-center text-xs text-gray-500 mb-3 space-x-4">
+                            <span><i class="fa-regular fa-calendar mr-1"></i> ៥ មិនា ២០២៦</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-[10px] font-bold">សេចក្តីជូនដំណឹង</span>
+                        </div>
+                        <h4 class="font-bold text-lg text-gray-800 mb-3 line-clamp-2 hover:text-primary cursor-pointer transition-colors">ការប្រជុំអាណាព្យាបាលសិស្សប្រចាំត្រីមាសទី២</h4>
+                        <p class="text-gray-600 text-sm line-clamp-3 mb-4 flex-grow">សូមគោរពអញ្ជើញមាតាបិតា និងអ្នកអាណាព្យាបាលសិស្សទាំងអស់ ចូលរួមការប្រជុំដើម្បីស្តាប់លទ្ធផលសិក្សារបស់កូនៗ និងពិភាក្សាការងារផ្សេងៗ...</p>
+                        <div class="hidden full-text">
+                            <p class="mb-4">សូមគោរពអញ្ជើញមាតាបិតា និងអ្នកអាណាព្យាបាលសិស្សទាំងអស់ ចូលរួមការប្រជុំដើម្បីស្តាប់លទ្ធផលសិក្សារបស់កូនៗ និងពិភាក្សាការងារផ្សេងៗពាក់ព័ន្ធនឹងការអភិវឌ្ឍសមត្ថភាពសិស្ស និងគោលនយោបាយសាលា។</p>
+                            <p>ការចូលរួមរបស់លោកអ្នកគឺជាកម្លាំងចិត្តដ៏ធំសម្រាប់សិស្សានុសិស្សរបស់យើង。</p>
+                        </div>
+                        <button onclick="openNewsModal(this)" class="text-primary font-bold text-sm inline-flex items-center hover:underline mt-auto cursor-pointer">អានបន្ត <i class="fa-solid fa-arrow-right-long ml-2"></i></button>
+                    </div>
+                </div>
+
+                <!-- News Item 4 -->
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition-shadow border border-gray-100 flex flex-col md:col-start-2 lg:col-start-2">
+                    <img src="https://lh3.googleusercontent.com/d/1417dbGuLIGMyd20bj_CsnCGb_otuwXXq" alt="ពិធីដង្ហែមេដៃ" class="w-full h-48 object-cover" onerror="this.src='https://placehold.co/600x400/eeeeee/aaaaaa?text=Medals+Parade'">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <div class="flex items-center text-xs text-gray-500 mb-3 space-x-4">
+                            <span><i class="fa-regular fa-calendar mr-1"></i> ០៨ មិថុនា ២០២៦</span>
+                            <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-[10px] font-bold">ជ័យលាភី</span>
+                        </div>
+                        <h4 class="font-bold text-lg text-gray-800 mb-3 line-clamp-2 hover:text-primary cursor-pointer transition-colors">ពិធីដង្ហែមេដៃព្រមទាំងបណ្ណសសើរដែលបានមកពីការប្រកួតកីឡា...</h4>
+                        <p class="text-gray-600 text-sm line-clamp-3 mb-4 flex-grow">សាលារៀនបានរៀបចំពិធីដង្ហែមេដៃ និងបណ្ណសសើរយ៉ាងអធិកអធម ដើម្បីអបអរសាទរ និងលើកទឹកចិត្តដល់ប្អូនៗសិស្សានុសិស្សដែលជាអត្តពលិកឆ្នើមរបស់យើង...</p>
+                        <div class="hidden full-text">
+                            <p class="mb-4">សាលារៀនបានរៀបចំពិធីដង្ហែមេដៃ និងបណ្ណសសើរយ៉ាងអធិកអធម ដើម្បីអបអរសាទរ និងលើកទឹកចិត្តដល់ប្អូនៗសិស្សានុសិស្សដែលជាអត្តពលិកឆ្នើមរបស់យើង ដែលបានឈ្នះមេដៃក្នុងការប្រកួតកីឡាប្រចាំសាលា និងថ្នាក់ខេត្ត។</p>
+                            <p>សាលាជឿជាក់ថា សុខភាពល្អ គឺជាមូលដ្ឋានគ្រឹះនៃចំណេះដឹង។</p>
+                        </div>
+                        <button onclick="openNewsModal(this)" class="text-primary font-bold text-sm inline-flex items-center hover:underline mt-auto cursor-pointer">អានបន្ត <i class="fa-solid fa-arrow-right-long ml-2"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-center md:hidden">
+                <a href="#" class="inline-block border border-primary text-primary px-6 py-2 rounded-full font-bold hover:bg-primary hover:text-white transition-colors">មើលព័ត៌មានទាំងអស់</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Contact Section -->
+    <section id="contact-section" class="py-16 bg-white border-t border-gray-200">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-12">
+                <h3 class="font-moul text-2xl md:text-3xl text-primary mb-2">ទំនាក់ទំនងមកកាន់សាលា</h3>
+                <div class="w-24 h-1 bg-secondary mx-auto rounded-full"></div>
+                <p class="mt-4 text-gray-600">សូមផ្ញើសារមកកាន់យើងខ្ញុំ ប្រសិនបើអ្នកមានចម្ងល់ ឬត្រូវការព័ត៌មានបន្ថែម。</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-gray-50 rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+                <!-- Contact Form -->
+                <div class="p-8 md:p-10">
+                    <h4 class="font-bold text-xl text-gray-800 mb-6">ផ្ញើសារមកកាន់យើងខ្ញុំ</h4>
+                    <form id="contact-form" onsubmit="event.preventDefault(); showCustomToast('សាររបស់អ្នកត្រូវបានផ្ញើដោយជោគជ័យ! យើងនឹងឆ្លើយតបទៅអ្នកវិញក្នុងពេលឆាប់ៗ។');">
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="name">ឈ្មោះពេញ</label>
+                            <input class="shadow-sm appearance-none border border-gray-300 rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" id="name" type="text" placeholder="បញ្ចូលឈ្មោះរបស់អ្នក" required>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="phone">លេខទូរស័ព្ទ / អ៊ីមែល</label>
+                            <input class="shadow-sm appearance-none border border-gray-300 rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" id="phone" type="text" placeholder="បញ្ចូលលេខទូរស័ព្ទ ឬអ៊ីមែល" required>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="subject">ប្រធានបទ</label>
+                            <select class="shadow-sm appearance-none border border-gray-300 rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" id="subject">
+                                <option>សាកសួរព័ត៌មានទូទៅ</option>
+                                <option>បញ្ហាការស្វែងរកលទ្ធផលសិក្សា</option>
+                                <option>ទំនាក់ទំនងកិច្ចការរដ្ឋបាល</option>
+                                <option>ផ្សេងៗ</option>
+                            </select>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="message">សាររបស់អ្នក</label>
+                            <textarea class="shadow-sm appearance-none border border-gray-300 rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" id="message" rows="4" placeholder="សូមសរសេរសារនៅទីនេះ..." required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary hover:bg-blue-800 text-white font-bold py-3 px-4 rounded-lg focus:outline-none focus:shadow-outline transition-colors flex justify-center items-center">
+                            <i class="fa-solid fa-paper-plane mr-2"></i> បញ្ជូនសារ
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Map & Quick Info -->
+                <div class="bg-gray-200 relative h-64 lg:h-auto">
+                    <!-- Google Maps Iframe Placeholder -->
+                    <div class="absolute inset-0 bg-[url('https://placehold.co/800x600/e2e8f0/64748b?text=Google+Map+Location')] bg-cover bg-center">
+                        <div class="absolute inset-0 flex items-center justify-center p-6">
+                            <div class="bg-white/90 backdrop-blur p-6 rounded-xl shadow-lg text-center w-full max-w-sm">
+                                <div class="w-12 h-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <h5 class="font-bold text-lg mb-2">ទីតាំងវិទ្យាល័យស្ដៅសន្តិភាព</h5>
+                                <p class="text-sm text-gray-600 mb-4">ភូមិស្ដៅ ឃុំស្ដៅ ស្រុករតនមណ្ឌល ខេត្តបាត់ដំបង</p>
+                                <button class="text-primary font-bold text-sm hover:underline flex items-center justify-center w-full">
+                                    បើកមើលក្នុង Google Maps <i class="fa-solid fa-arrow-up-right-from-square ml-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Result Modal (Hidden by default) - Structured exactly as shown in photo_2026-06-16_20-48-12 (2).jpg -->
+    <div id="result-modal" class="fixed inset-0 bg-black/60 z-[60] hidden flex items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-white rounded-3xl shadow-2xl w-full max-w-lg overflow-hidden transform scale-95 opacity-0 transition-all duration-300 relative" id="result-modal-content">
+            <!-- Close Button Inside -->
+            <button onclick="closeResultModal()" class="absolute top-4 right-5 text-gray-400 hover:text-red-500 text-3xl z-10 focus:outline-none">&times;</button>
+            
+            <div class="text-center pt-8 pb-4 px-6 border-b border-gray-100">
+                <h3 class="font-moul text-blue-900 text-lg md:text-xl tracking-wide">ប្រព័ន្ធស្វែងរកលទ្ធផលសិក្សាសិស្ស ( សុវត្ថិភាពខ្ពស់ )</h3>
+            </div>
+            
+            <div class="p-6 md:p-8">
+                <!-- ឆ្នាំសិក្សា -->
+                <div class="mb-4">
+                    <label class="block text-gray-600 text-sm font-bold mb-1.5">ឆ្នាំសិក្សា</label>
+                    <div class="relative">
+                        <select id="academic-year" class="w-full bg-slate-50 border border-gray-200 text-gray-700 py-3 px-4 pr-10 rounded-xl appearance-none focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+                            <option value="២០២៥-២០២៦">២០២៥-២០២៦</option>
+                            <option value="២០២៤-២០២៥">២០២៤-២០២៥</option>
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-400">
+                            <i class="fa-solid fa-chevron-down text-sm"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ការវាយតម្លៃ -->
+                <div class="mb-4">
+                    <label class="block text-gray-600 text-sm font-bold mb-1.5">ការវាយតម្លៃ</label>
+                    <div class="relative">
+                        <select id="term" class="w-full bg-slate-50 border border-gray-200 text-gray-700 py-3 px-4 pr-10 rounded-xl appearance-none focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+                            <option value="ប្រចាំខែ វិច្ឆិកា">ប្រចាំខែ វិច្ឆិកា</option>
+                            <option value="ប្រចាំខែ តុលា">ប្រចាំខែ តុលា</option>
+                            <option value="ប្រចាំខែ មិថុនា">ប្រចាំខែ មិថុនា</option>
+                            <option value="ប្រចាំខែ ឧសភា">ប្រចាំខែ ឧសភា</option>
+                            <option value="ប្រចាំឆមាសទី១">ប្រចាំឆមាសទី១</option>
+                            <option value="ប្រចាំឆមាសទី២">ប្រចាំឆមាសទី២</option>
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-400">
+                            <i class="fa-solid fa-chevron-down text-sm"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- អត្តលេខសិស្ស -->
+                <div class="mb-4">
+                    <label class="block text-gray-600 text-sm font-bold mb-1.5" for="student-id">អត្តលេខសិស្ស</label>
+                    <div class="relative">
+                        <input class="w-full bg-slate-50 border border-gray-200 rounded-xl py-3 pl-4 pr-12 text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" id="student-id" type="text" placeholder="0">
+                        <div class="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-400">
+                            <i class="fa-solid fa-qrcode text-lg"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ថ្ងៃខែឆ្នាំកំណើត -->
+                <div class="mb-5">
+                    <label class="block text-gray-600 text-sm font-bold mb-1.5">ថ្ងៃខែឆ្នាំកំណើត</label>
+                    <div class="grid grid-cols-3 gap-3">
+                        <div class="relative">
+                            <select id="dob-day" class="w-full bg-slate-50 border border-gray-200 text-gray-500 py-3 px-3 pr-8 rounded-xl appearance-none focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-center">
+                                <option value="">ថ្ងៃ</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">
+                                <i class="fa-solid fa-chevron-down text-xs"></i>
+                            </div>
+                        </div>
+                        <div class="relative">
+                            <select id="dob-month" class="w-full bg-slate-50 border border-gray-200 text-gray-500 py-3 px-3 pr-8 rounded-xl appearance-none focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-center">
+                                <option value="">ខែ</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">
+                                <i class="fa-solid fa-chevron-down text-xs"></i>
+                            </div>
+                        </div>
+                        <div class="relative">
+                            <select id="dob-year" class="w-full bg-slate-50 border border-gray-200 text-gray-500 py-3 px-3 pr-8 rounded-xl appearance-none focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-center">
+                                <option value="">ឆ្នាំ</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">
+                                <i class="fa-solid fa-chevron-down text-xs"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Robot Verification / Captcha -->
+                <div class="mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between p-3.5 bg-slate-50 rounded-xl border border-gray-150 gap-3">
+                    <div class="flex items-center text-gray-700 font-bold text-sm sm:text-base">
+                        <span class="mr-2">🤖</span>
+                        <span>ផ្ទៀងផ្ទាត់៖</span>
+                        <span id="captcha-question" class="ml-1.5 text-blue-800 font-bold">7 + 6 = ?</span>
+                    </div>
+                    <input id="captcha-answer" type="text" placeholder="វាយចម្លើយទីនេះ..." class="w-full sm:w-44 bg-white border border-gray-200 text-gray-700 py-2 px-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-center">
+                </div>
+
+                <button onclick="searchResult()" class="w-full bg-primary hover:bg-blue-800 text-white font-bold py-3.5 px-4 rounded-xl shadow-md transition-all duration-300 transform hover:-translate-y-0.5">
+                    ស្វែងរកលទ្ធផល
+                </button>
+                
+                <div id="mock-error" class="hidden mt-4 bg-red-50 border-l-4 border-red-500 text-red-700 p-3 text-sm rounded-r-lg">
+                    <p class="font-bold">ព័ត៌មានមិនត្រឹមត្រូវ ឬគ្មានទិន្នន័យ</p>
+                    <p>សូមប្រាកដថាអត្តលេខសិស្ស ថ្ងៃខែឆ្នាំកំណើត និងលេខផ្ទៀងផ្ទាត់បញ្ជាក់បានត្រឹមត្រូវ។</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bac II Modal (Hidden by default) - Styled exactly as shown in photo_2026-06-16_20-48-15.jpg -->
+    <div id="bacii-modal" class="fixed inset-0 bg-black/60 z-[60] hidden flex items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-white rounded-[2rem] shadow-2xl w-full max-w-xl overflow-hidden transform scale-95 opacity-0 transition-all duration-300 relative p-6 md:p-8" id="bacii-modal-content">
+            <!-- Close Button -->
+            <button onclick="closeBacIIModal()" class="absolute top-5 right-6 text-gray-400 hover:text-red-500 text-3xl focus:outline-none">&times;</button>
+            
+            <!-- School Header Title -->
+            <div class="text-center mb-6">
+                <h3 class="font-moul text-blue-900 text-2xl md:text-3xl tracking-wide mb-1">វិទ្យាល័យ ស្ដៅសន្តិភាព</h3>
+                <p class="text-amber-800 font-bold text-sm md:text-base">ប្រព័ន្ធវាយតម្លៃលទ្ធផលស្តង់ដាបាក់ឌុប</p>
+            </div>
+
+            <!-- Tab Selectors -->
+            <div class="grid grid-cols-2 gap-3 mb-6">
+                <button id="bacii-tab-1" onclick="switchBacIITab(1)" class="py-3 px-2 rounded-xl text-xs md:text-sm font-bold flex items-center justify-center gap-1.5 transition-all bg-baciiBlue text-white shadow-md">
+                    📊 សាកល្បងគណនានិទ្ទេសគោលដៅ
+                </button>
+                <button id="bacii-tab-2" onclick="switchBacIITab(2)" class="py-3 px-2 rounded-xl text-xs md:text-sm font-bold flex items-center justify-center gap-1.5 transition-all bg-white border border-slate-300 text-slate-700 hover:bg-slate-50">
+                    👁️ មើលលទ្ធផលទូទៅ (១៥មុខ)
+                </button>
+            </div>
+
+            <!-- Gray Styled Main Card Wrapper inside Modal -->
+            <div class="bg-slate-50 rounded-2xl border border-slate-100 p-5 md:p-6 mb-2">
+                
+                <!-- Tab 1 Container (Grade Predictor) -->
+                <div id="bacii-container-1">
+                    <!-- Dropdown Select (Updated to contain all 12 months) -->
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">១. ខែ/ឆមាស</label>
+                        <div class="relative">
+                            <select id="bacii-month-select" class="w-full bg-white border border-gray-200 text-gray-700 py-3.5 px-4 pr-10 rounded-xl appearance-none focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+                                <option value="មករា">មករា</option>
+                                <option value="កុម្ភៈ">កុម្ភៈ</option>
+                                <option value="មីនា">មីនា</option>
+                                <option value="មេសា">មេសា</option>
+                                <option value="ឧសភា">ឧសភា</option>
+                                <option value="មិថុនា">មិថុនា</option>
+                                <option value="កក្កដា">កក្កដា</option>
+                                <option value="សីហា">សីហា</option>
+                                <option value="កញ្ញា">កញ្ញា</option>
+                                <option value="តុលា">តុលា</option>
+                                <option value="វិច្ឆិកា">វិច្ឆិកា</option>
+                                <option value="ធ្នូ">ធ្នូ</option>
+                                <option value="ឆមាសទី១">ឆមាសទី១</option>
+                                <option value="ឆមាសទី២">ឆមាសទី២</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-400">
+                                <i class="fa-solid fa-chevron-down text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Input ID -->
+                    <div class="mb-5">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">២. អត្តលេខ ឬ ឈ្មោះសិស្ស</label>
+                        <div class="relative">
+                            <input id="bacii-student-input" class="w-full bg-white border border-gray-200 rounded-xl py-3.5 pl-4 pr-12 text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all font-sans" type="text" placeholder="ឧ. 024025026 ឬ ហ៊ុន ម៉ុម">
+                            <div class="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-400">
+                                <i class="fa-solid fa-qrcode text-lg"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 2 Container (15 Subjects General Results) -->
+                <div id="bacii-container-2" class="hidden">
+                    <p class="text-sm text-gray-600 mb-4 leading-relaxed">មើលរបាយការណ៍ស្ថិតិលទ្ធផលរួមទូទៅ និងការប្រឡងសាកល្បងគ្រប់មុខវិជ្ជាទាំង ១៥ សម្រាប់ឆ្នាំសិក្សា ២០២៥-២០២៦៖</p>
+                    <div class="grid grid-cols-2 gap-2 mb-4 text-xs md:text-sm">
+                        <div class="bg-white p-3 rounded-xl border border-slate-100">
+                            <p class="text-gray-400">ចំនួនបេក្ខជនសរុប</p>
+                            <p class="text-lg font-bold text-slate-800">៤២៥ នាក់</p>
+                        </div>
+                        <div class="bg-white p-3 rounded-xl border border-slate-100">
+                            <p class="text-gray-400">អត្រាជាប់សាកល្បង</p>
+                            <p class="text-lg font-bold text-green-600">៨២.៤%</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-3.5 rounded-xl border border-slate-100">
+                        <div class="flex justify-between items-center text-xs text-gray-600 mb-1.5">
+                            <span>និទ្ទេស A គោលដៅ</span>
+                            <span class="font-bold text-primary">១៨ នាក់</span>
+                        </div>
+                        <div class="w-full bg-gray-100 rounded-full h-1.5">
+                            <div class="bg-amber-500 h-1.5 rounded-full" style="width: 15%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Orange Search Button -->
+                <button onclick="searchBacII()" class="w-full bg-baciiOrange hover:bg-orange-800 text-white font-bold py-4 px-4 rounded-xl shadow-md transition-all duration-300 transform hover:-translate-y-0.5 text-center tracking-wide">
+                    ស្វែងរកលទ្ធផល
+                </button>
+                
+                <div id="bacii-mock-error" class="hidden mt-4 bg-red-50 border-l-4 border-red-500 text-red-700 p-3 text-sm rounded-r-lg">
+                    <p class="font-bold">ព័ត៌មានមិនត្រឹមត្រូវ ឬគ្មានទិន្នន័យ</p>
+                    <p>សូមប្រាកដថាអត្តលេខសិស្ស ឬឈ្មោះសិស្សបានបញ្ចូលត្រឹមត្រូវរួចរាល់។</p>
+                </div>
+            </div>
+
+            <!-- Simulated Results Card Structure (Hidden by default) -->
+            <div id="bacii-results-card" class="hidden mt-4 p-4 bg-blue-50 border border-blue-100 rounded-2xl">
+                <div class="flex justify-between items-center border-b border-blue-200 pb-2 mb-3">
+                    <span class="font-bold text-blue-900" id="predicted-student-name">ហ៊ុន ម៉ុម (024025026)</span>
+                    <span class="bg-green-600 text-white px-2.5 py-0.5 rounded text-xs font-bold font-sans">និទ្ទេសរួម: B</span>
+                </div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs">
+                    <div class="bg-white p-2 rounded border border-blue-50"><span class="text-gray-500">គណិតវិទ្យា:</span> <strong class="text-blue-900 font-sans float-right">A</strong></div>
+                    <div class="bg-white p-2 rounded border border-blue-50"><span class="text-gray-500">រូបវិទ្យា:</span> <strong class="text-blue-900 font-sans float-right">B</strong></div>
+                    <div class="bg-white p-2 rounded border border-blue-50"><span class="text-gray-500">គីមីវិទ្យា:</span> <strong class="text-blue-900 font-sans float-right">A</strong></div>
+                    <div class="bg-white p-2 rounded border border-blue-50"><span class="text-gray-500">ជីវវិទ្យា:</span> <strong class="text-blue-900 font-sans float-right">B</strong></div>
+                    <div class="bg-white p-2 rounded border border-blue-50"><span class="text-gray-500">អក្សរសាស្ត្រខ្មែរ:</span> <strong class="text-blue-900 font-sans float-right">C</strong></div>
+                    <div class="bg-white p-2 rounded border border-blue-50"><span class="text-gray-500">ប្រវត្តិវិទ្យា:</span> <strong class="text-blue-900 font-sans float-right">B</strong></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Modal (កិច្ចការរដ្ឋបាល) - Structured exactly as shown in photo_2026-06-16_20-48-11.jpg -->
+    <div id="admin-modal" class="fixed inset-0 bg-black/60 z-[60] hidden flex items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-white rounded-[2rem] shadow-2xl w-full max-w-2xl overflow-hidden transform scale-95 opacity-0 transition-all duration-300 relative" id="admin-modal-content">
+            <!-- Top Header Bar -->
+            <div class="p-4 bg-slate-50 border-b border-gray-150 flex items-center justify-between">
+                <button onclick="closeAdminModal()" class="text-blue-900 hover:text-blue-700 font-bold flex items-center gap-2">
+                    <i class="fa-solid fa-arrow-left"></i> ត្រឡប់ទៅទំព័រដើម
+                </button>
+                <button onclick="closeAdminModal()" class="text-gray-400 hover:text-red-500 text-2xl focus:outline-none">&times;</button>
+            </div>
+            
+            <!-- Main Content Container with Soft Gray Background -->
+            <div class="p-6 md:p-8 bg-slate-100">
+                <!-- White inner card layout matching reference screenshot -->
+                <div class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm">
+                    <!-- Title block with color bar chart icon -->
+                    <div class="flex items-start gap-4 mb-6">
+                        <!-- Simulated bar chart icon (Red, Green, Blue bars) -->
+                        <div class="flex items-end gap-1 h-10 w-8 pt-2 flex-shrink-0">
+                            <div class="w-1.5 h-6 bg-red-600 rounded-sm"></div>
+                            <div class="w-1.5 h-8 bg-green-600 rounded-sm"></div>
+                            <div class="w-1.5 h-10 bg-blue-800 rounded-sm"></div>
+                        </div>
+                        <div>
+                            <h3 class="font-moul text-blue-900 text-lg md:text-xl tracking-wide mb-1.5">របាយការណ៍ស្ថិតិ និងការវិភាគ</h3>
+                            <p class="text-gray-500 text-sm">ប្រព័ន្ធវិភាគចំណាត់ថ្នាក់ និងនិទ្ទេសសិស្ស</p>
+                        </div>
+                    </div>
+
+                    <!-- Horizontal Grid of Select inputs -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
+                        <!-- Selection 1: Month -->
+                        <div class="relative">
+                            <select id="admin-month-select" class="w-full bg-slate-50 border border-gray-200 text-gray-700 py-3.5 px-4 pr-10 rounded-xl appearance-none focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+                                <option value="មករា">មករា</option>
+                                <option value="កុម្ភៈ">កុម្ភៈ</option>
+                                <option value="មីនា">មីនា</option>
+                                <option value="មេសា">មេសា</option>
+                                <option value="ឧសភា" selected>ឧសភា</option>
+                                <option value="មិថុនា">មិថុនា</option>
+                                <option value="កក្កដា">កក្កដា</option>
+                                <option value="សីហា">សីហា</option>
+                                <option value="កញ្ញា">កញ្ញា</option>
+                                <option value="តុលា">តុលា</option>
+                                <option value="វិច្ឆិកា">វិច្ឆិកា</option>
+                                <option value="ធ្នូ">ធ្នូ</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-400">
+                                <i class="fa-solid fa-chevron-down text-sm"></i>
+                            </div>
+                        </div>
+
+                        <!-- Selection 2: Categorized Analysis -->
+                        <div class="relative">
+                            <select id="admin-category-select" class="w-full bg-slate-50 border border-gray-200 text-gray-700 py-3.5 px-4 pr-10 rounded-xl appearance-none focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+                                <option value="វិភាគតាមថ្នាក់ (ប្រៀបធៀបមុខវិជ្ជា)">វិភាគតាមថ្នាក់ (ប្រៀបធៀបមុខវិជ្ជា)</option>
+                                <option value="វិភាគចំណាត់ថ្នាក់សរុប">វិភាគចំណាត់ថ្នាក់សរុប</option>
+                                <option value="វិភាគលទ្ធផលប្រឡង">វិភាគលទ្ធផលប្រឡង</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-400">
+                                <i class="fa-solid fa-chevron-down text-sm"></i>
+                            </div>
+                        </div>
+
+                        <!-- Selection 3: Average Criteria -->
+                        <div class="relative">
+                            <select id="admin-average-select" class="w-full bg-slate-50 border border-gray-200 text-gray-700 py-3.5 px-4 pr-10 rounded-xl appearance-none focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+                                <option value="មធ្យមភាគរួម">មធ្យមភាគរួម</option>
+                                <option value="មធ្យមភាគប្រចាំមុខវិជ្ជា">មធ្យមភាគប្រចាំមុខវិជ្ជា</option>
+                                <option value="ភាគរយសរុប">ភាគរយសរុប</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-400">
+                                <i class="fa-solid fa-chevron-down text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Trigger (Dark styled search button as shown in photo) -->
+                    <div class="mb-2">
+                        <button onclick="downloadAdminReport()" class="bg-[#1e293b] hover:bg-[#0f172a] text-white font-bold py-3.5 px-6 rounded-xl shadow-md transition-all duration-300 flex items-center gap-2">
+                            <i class="fa-solid fa-magnifying-glass"></i> ទាញយក
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer bar with dark banner design matching photo -->
+            <div class="bg-[#0f172a] py-4 text-center text-xs text-slate-400 font-sans border-t border-slate-800">
+                © ២០២៦ រក្សាសិទ្ធិដោយ វិទ្យាល័យ ស្ដៅសន្តិភាព។ រៀបចំដោយផ្នែក ICT។
+            </div>
+        </div>
+    </div>
+
+    <!-- Enrollment Modal (Hidden by default) -->
+    <div id="enrollment-modal" class="fixed inset-0 bg-black/60 z-[60] hidden flex items-center justify-center p-4 backdrop-blur-sm overflow-y-auto">
+        <div class="bg-white rounded-[2rem] shadow-2xl w-full max-w-2xl overflow-hidden transform scale-95 opacity-0 transition-all duration-300 relative my-8" id="enrollment-modal-content">
+            <!-- Close Button Inside -->
+            <button onclick="closeEnrollmentModal()" class="absolute top-5 right-6 text-gray-400 hover:text-red-500 text-3xl z-10 focus:outline-none">&times;</button>
+            
+            <div class="text-center pt-8 pb-4 px-6 border-b border-gray-100">
+                <h3 class="font-moul text-blue-900 text-xl tracking-wide mb-1">ពាក្យសុំចុះឈ្មោះចូលរៀនអនឡាញ</h3>
+                <p class="text-indigo-800 font-bold text-sm md:text-base">សាលាចំណេះទូទៅរដ្ឋ នៃព្រះរាជាណាចក្រកម្ពុជា</p>
+            </div>
+            
+            <form id="enrollment-form" onsubmit="submitEnrollment(event)" class="p-6 md:p-8 bg-slate-50">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <!-- Student Name Khmer -->
+                    <div>
+                        <label class="block text-gray-700 text-sm font-bold mb-1.5">ឈ្មោះពេញសិស្ស (អក្សរខ្មែរ) *</label>
+                        <input type="text" id="enroll-name-kh" required class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" placeholder="ឧ. ហេង សំណាង">
+                    </div>
+                    <!-- Student Name Latin -->
+                    <div>
+                        <label class="block text-gray-700 text-sm font-bold mb-1.5">ឈ្មោះពេញសិស្ស (អក្សរឡាតាំង) *</label>
+                        <input type="text" id="enroll-name-en" required class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all uppercase" placeholder="ឧ. HENG SAMNANG">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                    <!-- Gender -->
+                    <div>
+                        <label class="block text-gray-700 text-sm font-bold mb-1.5">ភេទ *</label>
+                        <select id="enroll-gender" required class="w-full bg-white border border-gray-200 text-gray-700 py-3 px-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+                            <option value="ស្រី">ស្រី</option>
+                            <option value="ប្រុស">ប្រុស</option>
+                        </select>
+                    </div>
+                    <!-- Grade Selection based on Cambodia School Standards -->
+                    <div class="md:col-span-2">
+                        <label class="block text-gray-700 text-sm font-bold mb-1.5">ជ្រើសរើសកម្រិតថ្នាក់សិក្សា *</label>
+                        <select id="enroll-grade" required class="w-full bg-white border border-gray-200 text-gray-700 py-3 px-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+                            <optgroup label="កម្រិតអនុវិទ្យាល័យ (Lower Secondary)">
+                                <option value="ថ្នាក់ទី៧">ថ្នាក់ទី៧ (Grade 7)</option>
+                                <option value="ថ្នាក់ទី៨">ថ្នាក់ទី៨ (Grade 8)</option>
+                                <option value="ថ្នាក់ទី៩">ថ្នាក់ទី៩ (Grade 9)</option>
+                            </optgroup>
+                            <optgroup label="កម្រិតវិទ្យាល័យ (Upper Secondary)">
+                                <option value="ថ្នាក់ទី១០">ថ្នាក់ទី១០ (Grade 10)</option>
+                                <option value="ថ្នាក់ទី១១">ថ្នាក់ទី១១ (Grade 11)</option>
+                                <option value="ថ្នាក់ទី១២">ថ្នាក់ទី១២ (Grade 12)</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <!-- Phone Number -->
+                    <div>
+                        <label class="block text-gray-700 text-sm font-bold mb-1.5">លេខទូរស័ព្ទទំនាក់ទំនងអាណាព្យាបាល *</label>
+                        <input type="tel" id="enroll-phone" required class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" placeholder="ឧ. 096XXXXXXX">
+                    </div>
+                    <!-- Previous School -->
+                    <div>
+                        <label class="block text-gray-700 text-sm font-bold mb-1.5">មកពីសាលារៀនចាស់ / ភូមិសិក្សា *</label>
+                        <input type="text" id="enroll-prev-school" required class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" placeholder="ឧ. សាលាបឋមសិក្សាស្ដៅ">
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-1.5">អាសយដ្ឋានបច្ចុប្បន្ន (ភូមិ/ឃុំ/ស្រុក/ខេត្ត) *</label>
+                    <input type="text" id="enroll-address" required class="w-full bg-white border border-gray-200 rounded-xl py-3 px-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" placeholder="ឧ. ភូមិស្ដៅ ឃុំស្ដៅ ស្រុករតនមណ្ឌល ខេត្តបាត់ដំបង">
+                </div>
+
+                <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-800 text-white font-bold py-4 px-4 rounded-xl shadow-md transition-all duration-300 transform hover:-translate-y-0.5 text-center tracking-wide">
+                    <i class="fa-solid fa-paper-plane mr-2"></i> ដាក់ពាក្យសុំចុះឈ្មោះចូលរៀន
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Rules Modal (បទបញ្ជាផ្ទៃក្នុង) - Hidden by default -->
+    <div id="rules-modal" class="fixed inset-0 bg-black/60 z-[60] hidden flex items-center justify-center p-4 backdrop-blur-sm overflow-y-auto">
+        <div class="bg-white rounded-[2rem] shadow-2xl w-full max-w-4xl overflow-hidden transform scale-95 opacity-0 transition-all duration-300 relative my-8" id="rules-modal-content">
+            <!-- Close Button Inside -->
+            <button onclick="closeRulesModal()" class="absolute top-5 right-6 text-gray-400 hover:text-red-500 text-3xl z-10 focus:outline-none">&times;</button>
+            
+            <div class="text-center pt-8 pb-4 px-6 border-b border-gray-100 bg-slate-50">
+                <h3 class="font-moul text-blue-900 text-xl tracking-wide mb-1">បទបញ្ជាផ្ទៃក្នុងសាលារៀន</h3>
+                <p class="text-rose-600 font-bold text-sm md:text-base">វិទ្យាល័យស្ដៅសន្តិភាព - វិន័យ និងសីលធម៌ល្អប្រពៃ</p>
+            </div>
+            
+            <div class="p-6 md:p-8 bg-slate-100 max-h-[70vh] overflow-y-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Image 1 -->
+                    <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200">
+                        <p class="text-sm font-bold text-gray-700 mb-3 text-center">
+                            <i class="fa-solid fa-circle-info text-rose-500 mr-1"></i> បទបញ្ជាផ្ទៃក្នុង - ទំព័រទី ១
+                        </p>
+                        <div class="rounded-xl overflow-hidden border border-gray-150">
+                            <img src="https://lh3.googleusercontent.com/d/1n-o0674QBicjNE872PlPPTi0x530p8V0" alt="[រូបភាពបទបញ្ជាផ្ទៃក្នុង ទំព័រទី១]" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/600x800/eeeeee/aaaaaa?text=Rules+Page+1'">
+                        </div>
+                    </div>
+                    <!-- Image 2 -->
+                    <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200">
+                        <p class="text-sm font-bold text-gray-700 mb-3 text-center">
+                            <i class="fa-solid fa-circle-info text-rose-500 mr-1"></i> បទបញ្ជាផ្ទៃក្នុង - ទំព័រទី ២
+                        </p>
+                        <div class="rounded-xl overflow-hidden border border-gray-150">
+                            <img src="https://lh3.googleusercontent.com/d/152QWXU3vhMqZxPwN1yco70lj4JC65K3q" alt="[រូបភាពបទបញ្ជាផ្ទៃក្នុង ទំព័រទី២]" class="w-full h-auto object-cover" onerror="this.src='https://placehold.co/600x800/eeeeee/aaaaaa?text=Rules+Page+2'">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer -->
+            <div class="bg-[#0f172a] py-4 text-center text-xs text-slate-400 font-sans border-t border-slate-800">
+                រក្សាសិទ្ធិដោយ វិទ្យាល័យ ស្ដៅសន្តិភាព
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#0f172a] text-gray-300 pt-16 mt-auto">
+        <div class="container mx-auto px-4 pb-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Column 1: School Management -->
+                <div>
+                    <h4 class="font-moul text-white text-xl mb-6 border-b border-gray-700 pb-2 inline-block">គណៈគ្រប់គ្រងសាលា</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-user-tie mt-1 mr-3 text-secondary"></i>
+                            <div>
+                                <p class="font-bold text-white">លោក ហ៊ត ហេង <span class="font-normal text-gray-400 text-xs">(នាយកសាលា)</span></p>
+                                <p class="text-blue-300">Tel: 095643737</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-user mt-1 mr-3 text-secondary"></i>
+                            <div>
+                                <p class="font-bold text-white">លោក ចាប កុសល <span class="font-normal text-gray-400 text-xs">(នាយករង)</span></p>
+                                <p class="text-blue-300">Tel: 095440403</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-user mt-1 mr-3 text-secondary"></i>
+                            <div>
+                                <p class="font-bold text-white">លោក លីម សុជាតិ <span class="font-normal text-gray-400 text-xs">(នាយករង)</span></p>
+                                <p class="text-blue-300">Tel: 012252407</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-user mt-1 mr-3 text-secondary"></i>
+                            <div>
+                                <p class="font-bold text-white">លោក នន់ សុវណ្ណរាជ <span class="font-normal text-gray-400 text-xs">(ជំនួយការបច្ចេកទេស ICT)</span></p>
+                                <p class="text-blue-300">Tel: 0969447122</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 2: Working Hours -->
+                <div>
+                    <h4 class="font-moul text-white text-xl mb-6 border-b border-gray-700 pb-2 inline-block">ម៉ោងធ្វើការ</h4>
+                    <div class="bg-slate-800 rounded-lg p-5 border border-slate-700">
+                        <div class="flex items-center mb-4 text-white">
+                            <i class="fa-solid fa-clock text-2xl mr-3 text-secondary"></i>
+                            <span class="font-bold text-lg">ចន្ទ ដល់ សៅរ៍</span>
+                        </div>
+                        <ul class="space-y-3">
+                            <li class="flex justify-between border-b border-slate-700 pb-2">
+                                <span>វេនព្រឹក៖</span>
+                                <span class="font-bold text-white">០៧:០០ - ១១:០០</span>
+                            </li>
+                            <li class="flex justify-between pt-1">
+                                <span>វេនរសៀល៖</span>
+                                <span class="font-bold text-white">១៤:០០ - ១៦:០០</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Column 3: Contact & Address -->
+                <div>
+                    <h4 class="font-moul text-white text-xl mb-6 border-b border-gray-700 pb-2 inline-block">ទំនាក់ទំនង</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center mr-4 flex-shrink-0 text-secondary">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-white mb-1">អាសយដ្ឋាន៖</p>
+                                <p class="text-sm leading-relaxed">ភូមិស្ដៅ ឃុំស្ដៅ ស្រុករតនមណ្ឌល ខេត្តបាត់ដំបង</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center mr-4 flex-shrink-0 text-secondary">
+                                <i class="fa-brands fa-telegram text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-white mb-1">តេឡេក្រាមផ្លូវការ៖</p>
+                                <a href="https://t.me/SdoaSantepheapHighSchool" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 transition-colors break-all">t.me/SdoaSantepheapHighSchool</a>
+                            </div>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center mr-4 flex-shrink-0 text-secondary">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm">info@sdp-highschool.org</p>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <!-- Social Links -->
+                    <div class="mt-8 flex space-x-3">
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-lg">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="https://t.me/SdoaSantepheapHighSchool" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-lg">
+                            <i class="fa-brands fa-telegram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-red-600 hover:text-white transition-colors text-lg">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- News Detail Modal -->
+    <div id="news-modal" class="fixed inset-0 z-[70] hidden bg-white overflow-y-auto">
+        <div class="container mx-auto px-4 py-8 max-w-3xl">
+            <!-- ប៊ូតុងត្រឡប់មកទំព័រដើមវិញ -->
+            <button onclick="closeNewsModal()" class="mb-6 px-6 py-3 bg-primary hover:bg-blue-800 text-white rounded-full font-bold transition-all shadow-lg flex items-center">
+                <i class="fa-solid fa-arrow-left mr-2"></i> ត្រឡប់មកទំព័រដើមវិញ
+            </button>
+            <h2 id="modal-title" class="text-2xl md:text-4xl font-moul text-primary mb-6"></h2>
+            <div id="modal-media" class="mb-6 rounded-2xl overflow-hidden shadow-md"></div>
+            <div id="modal-body" class="text-gray-700 leading-relaxed text-lg font-hanuman"></div>
+        </div>
+    </div>
+
+    <!-- Custom Notification Toast (No-alert requirement) -->
+    <div id="custom-toast" class="fixed bottom-5 left-5 z-[100] hidden bg-green-600 text-white px-6 py-4 rounded-xl shadow-2xl transition-all flex items-center gap-2">
+        <i class="fa-solid fa-circle-check text-xl"></i>
+        <span id="custom-toast-message"></span>
+    </div>
+
+    <!-- Scripts for Interaction -->
+    <script>
+        // Custom Toast Helper
+        function showCustomToast(msg) {
+            const toast = document.getElementById('custom-toast');
+            const toastMsg = document.getElementById('custom-toast-message');
+            toastMsg.innerText = msg;
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 4000);
+        }
+
+        // Toggle Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Modal Logic for News
+        function openNewsModal(btn) {
+            const card = btn.closest('.bg-white');
+            const title = card.querySelector('h4').innerText;
+            const media = card.querySelector('img') || card.querySelector('iframe');
+            const fullText = card.querySelector('.full-text').innerHTML;
+            
+            document.getElementById('modal-title').innerText = title;
+            const modalMedia = document.getElementById('modal-media');
+            modalMedia.innerHTML = '';
+            
+            if (media) {
+                const mediaClone = media.cloneNode(true);
+                mediaClone.classList.add('w-full', 'h-auto');
+                modalMedia.appendChild(mediaClone);
+            }
+            
+            document.getElementById('modal-body').innerHTML = fullText;
+            
+            const modal = document.getElementById('news-modal');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeNewsModal() {
+            const modal = document.getElementById('news-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Scroll to services
+        function scrollToServices() {
+            document.getElementById('services').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Modal Logic for Result Checking
+        const modal = document.getElementById('result-modal');
+        const modalContent = document.getElementById('result-modal-content');
+        const mockError = document.getElementById('mock-error');
+        let currentCaptchaAnswer = 0;
+
+        // Populate Date Dropdowns
+        function populateDOBDropdowns() {
+            const daySelect = document.getElementById('dob-day');
+            const monthSelect = document.getElementById('dob-month');
+            const yearSelect = document.getElementById('dob-year');
+
+            if (daySelect && daySelect.options.length <= 1) {
+                // Populate Days 1-31
+                for (let i = 1; i <= 31; i++) {
+                    const opt = document.createElement('option');
+                    opt.value = i;
+                    opt.innerHTML = i;
+                    daySelect.appendChild(opt);
+                }
+                
+                // Populate Months 1-12
+                const khmerMonths = ['មករា', 'កុម្ភៈ', 'មីនា', 'មេសា', 'ឧសភា', 'មិថុនា', 'កក្កដា', 'សីហា', 'កញ្ញា', 'តុលា', 'វិច្ឆិកា', 'ធ្នូ'];
+                khmerMonths.forEach((m, idx) => {
+                    const opt = document.createElement('option');
+                    opt.value = idx + 1;
+                    opt.innerHTML = m;
+                    monthSelect.appendChild(opt);
+                });
+
+                // Populate Years (e.g., 2000 to 2020)
+                const currentYear = new Date().getFullYear();
+                for (let i = currentYear - 5; i >= currentYear - 30; i--) {
+                    const opt = document.createElement('option');
+                    opt.value = i;
+                    opt.innerHTML = i;
+                    yearSelect.appendChild(opt);
+                }
+            }
+        }
+
+        // Generate Math Captcha
+        function generateCaptcha() {
+            const num1 = Math.floor(Math.random() * 10) + 1;
+            const num2 = Math.floor(Math.random() * 10) + 1;
+            currentCaptchaAnswer = num1 + num2;
+            document.getElementById('captcha-question').innerHTML = `${num1} + ${num2} = ?`;
+            document.getElementById('captcha-answer').value = '';
+        }
+
+        function openResultModal() {
+            modal.classList.remove('hidden');
+            mockError.classList.add('hidden'); // Reset error
+            document.getElementById('student-id').value = '';
+            
+            // Populate drop downs and captcha on open
+            populateDOBDropdowns();
+            generateCaptcha();
+            
+            // Animation trick
+            setTimeout(() => {
+                modalContent.classList.remove('scale-95', 'opacity-0');
+                modalContent.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function closeResultModal() {
+            modalContent.classList.remove('scale-100', 'opacity-100');
+            modalContent.classList.add('scale-95', 'opacity-0');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        // Search Result validation
+        function searchResult() {
+            const btn = event.currentTarget;
+            const originalContent = btn.innerHTML;
+            const studentId = document.getElementById('student-id').value.trim();
+            const captchaInput = document.getElementById('captcha-answer').value.trim();
+            const day = document.getElementById('dob-day').value;
+            const month = document.getElementById('dob-month').value;
+            const year = document.getElementById('dob-year').value;
+
+            mockError.classList.add('hidden');
+
+            // 1. Basic validation
+            if (!studentId) {
+                mockError.innerHTML = '<p class="font-bold">កំហុសក្នុងការស្វែងរក</p><p>សូមបញ្ចូលអត្តលេខសិស្សជាមុនសិន。</p>';
+                mockError.classList.remove('hidden');
+                return;
+            }
+
+            if (!day || !month || !year) {
+                mockError.innerHTML = '<p class="font-bold">កំហុសក្នុងការស្វែងរក</p><p>សូមជ្រើសរើសថ្ងៃខែឆ្នាំកំណើតឱ្យបានត្រឹមត្រូវ。</p>';
+                mockError.classList.remove('hidden');
+                return;
+            }
+
+            // 2. Verification check
+            if (parseInt(captchaInput) !== currentCaptchaAnswer) {
+                mockError.innerHTML = '<p class="font-bold">លេខផ្ទៀងផ្ទាត់មិនត្រឹមត្រូវ</p><p>សូមពិនិត្យមើលរូប 🤖 និងគណនាលេខបូកឡើងវិញ。</p>';
+                mockError.classList.remove('hidden');
+                generateCaptcha(); // refresh
+                return;
+            }
+            
+            // Loading state
+            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin mr-2"></i> កំពុងស្វែងរក...';
+            btn.disabled = true;
+            btn.classList.add('opacity-80');
+
+            // Simulate network request
+            setTimeout(() => {
+                btn.innerHTML = originalContent;
+                btn.disabled = false;
+                btn.classList.remove('opacity-80');
+                
+                // Show final simulated empty/error feedback
+                mockError.innerHTML = '<p class="font-bold">រកមិនឃើញទិន្នន័យ</p><p>ប្រព័ន្ធទិន្នន័យមិនទាន់ភ្ជាប់ទៅកាន់ Supabase RLS Policy របស់សាលារបស់អ្នកនៅឡើយទេ។</p>';
+                mockError.classList.remove('hidden');
+                generateCaptcha();
+            }, 1500);
+        }
+
+        // Bac II Modal Management
+        const baciiModal = document.getElementById('bacii-modal');
+        const baciiContent = document.getElementById('bacii-modal-content');
+        const baciiMockError = document.getElementById('bacii-mock-error');
+        const baciiResultsCard = document.getElementById('bacii-results-card');
+        let activeBacIITab = 1;
+
+        function openBacIIModal() {
+            baciiModal.classList.remove('hidden');
+            baciiMockError.classList.add('hidden');
+            baciiResultsCard.classList.add('hidden');
+            document.getElementById('bacii-student-input').value = '';
+            switchBacIITab(1); // Default to first tab
+            
+            setTimeout(() => {
+                baciiContent.classList.remove('scale-95', 'opacity-0');
+                baciiContent.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function closeBacIIModal() {
+            baciiContent.classList.remove('scale-100', 'opacity-100');
+            baciiContent.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                baciiModal.classList.add('hidden');
+            }, 300);
+        }
+
+        function switchBacIITab(tabIndex) {
+            activeBacIITab = tabIndex;
+            const tab1 = document.getElementById('bacii-tab-1');
+            const tab2 = document.getElementById('bacii-tab-2');
+            const container1 = document.getElementById('bacii-container-1');
+            const container2 = document.getElementById('bacii-container-2');
+            
+            baciiMockError.classList.add('hidden');
+            baciiResultsCard.classList.add('hidden');
+
+            if (tabIndex === 1) {
+                // Activate Tab 1 (Predictor)
+                tab1.className = "py-3 px-2 rounded-xl text-xs md:text-sm font-bold flex items-center justify-center gap-1.5 transition-all bg-baciiBlue text-white shadow-md";
+                tab2.className = "py-3 px-2 rounded-xl text-xs md:text-sm font-bold flex items-center justify-center gap-1.5 transition-all bg-white border border-slate-300 text-slate-700 hover:bg-slate-50";
+                container1.classList.remove('hidden');
+                container2.classList.add('hidden');
+            } else {
+                // Activate Tab 2 (General)
+                tab1.className = "py-3 px-2 rounded-xl text-xs md:text-sm font-bold flex items-center justify-center gap-1.5 transition-all bg-white border border-slate-300 text-slate-700 hover:bg-slate-50";
+                tab2.className = "py-3 px-2 rounded-xl text-xs md:text-sm font-bold flex items-center justify-center gap-1.5 transition-all bg-baciiBlue text-white shadow-md";
+                container1.classList.add('hidden');
+                container2.classList.remove('hidden');
+            }
+        }
+
+        function searchBacII() {
+            baciiMockError.classList.add('hidden');
+            baciiResultsCard.classList.add('hidden');
+
+            if (activeBacIITab === 1) {
+                const inputVal = document.getElementById('bacii-student-input').value.trim();
+                if (!inputVal) {
+                    baciiMockError.innerHTML = '<p class="font-bold">កំហុសក្នុងការស្វែងរក</p><p>សូមបញ្ចូលអត្តលេខ ឬឈ្មោះសិស្សជាមុនសិន។</p>';
+                    baciiMockError.classList.remove('hidden');
+                    return;
+                }
+
+                // Simulate search matching
+                document.getElementById('predicted-student-name').innerText = `${inputVal} (បាក់ឌុបសាកល្បង)`;
+                baciiResultsCard.classList.remove('hidden');
+                showCustomToast('បានរកឃើញលទ្ធផលស្តង់ដាបាក់ឌុបគោលដៅ!');
+            } else {
+                // Tab 2 Action
+                showCustomToast('កំពុងដំណើរការទាញយករបាយការណ៍លទ្ធផលទូទៅ...');
+            }
+        }
+
+        // Admin Modal (កិច្ចការរដ្ឋបាល) Management
+        const adminModal = document.getElementById('admin-modal');
+        const adminContent = document.getElementById('admin-modal-content');
+
+        function openAdminModal() {
+            adminModal.classList.remove('hidden');
+            setTimeout(() => {
+                adminContent.classList.remove('scale-95', 'opacity-0');
+                adminContent.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function closeAdminModal() {
+            adminContent.classList.remove('scale-100', 'opacity-100');
+            adminContent.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                adminModal.classList.add('hidden');
+            }, 300);
+        }
+
+        function downloadAdminReport() {
+            const month = document.getElementById('admin-month-select').value;
+            const category = document.getElementById('admin-category-select').value;
+            const average = document.getElementById('admin-average-select').value;
+
+            showCustomToast(`កំពុងរៀបចំទាញយករបាយការណ៍ ${category} (${average}) សម្រាប់ខែ ${month}...`);
+        }
+
+        // Enrollment Modal Management
+        const enrollModal = document.getElementById('enrollment-modal');
+        const enrollContent = document.getElementById('enrollment-modal-content');
+
+        function openEnrollmentModal() {
+            enrollModal.classList.remove('hidden');
+            document.getElementById('enrollment-form').reset();
+            setTimeout(() => {
+                enrollContent.classList.remove('scale-95', 'opacity-0');
+                enrollContent.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function closeEnrollmentModal() {
+            enrollContent.classList.remove('scale-100', 'opacity-100');
+            enrollContent.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                enrollModal.classList.add('hidden');
+            }, 300);
+        }
+
+        function submitEnrollment(event) {
+            event.preventDefault();
+            const studentName = document.getElementById('enroll-name-kh').value.trim();
+            const grade = document.getElementById('enroll-grade').value;
+            
+            // Simulating successful registration
+            const registerId = 'SDP-2026-' + Math.floor(1000 + Math.random() * 9000);
+            
+            closeEnrollmentModal();
+            showCustomToast(`🎉 ការចុះឈ្មោះសិស្សឈ្មោះ «${studentName}» ចូលរៀន «${grade}» បានជោគជ័យ! អត្តលេខបណ្តោះអាសន្ន៖ ${registerId}`);
+        }
+
+        // Rules Modal (បទបញ្ជាផ្ទៃក្នុង) Management
+        const rulesModal = document.getElementById('rules-modal');
+        const rulesContent = document.getElementById('rules-modal-content');
+
+        function openRulesModal() {
+            rulesModal.classList.remove('hidden');
+            setTimeout(() => {
+                rulesContent.classList.remove('scale-95', 'opacity-0');
+                rulesContent.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function closeRulesModal() {
+            rulesContent.classList.remove('scale-100', 'opacity-100');
+            rulesContent.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                rulesModal.classList.add('hidden');
+            }, 300);
+        }
+
+        // Close modals when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeResultModal();
+            }
+            if (e.target === baciiModal) {
+                closeBacIIModal();
+            }
+            if (e.target === adminModal) {
+                closeAdminModal();
+            }
+            if (e.target === enrollModal) {
+                closeEnrollmentModal();
+            }
+            if (e.target === rulesModal) {
+                closeRulesModal();
+            }
+        });
+    </script>
+</body>
 </html>
